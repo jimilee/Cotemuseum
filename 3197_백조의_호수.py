@@ -1,36 +1,62 @@
 import sys
+from collections import deque
 sys.stdin = open("input.txt","r")
 
-
 x, y = map(int, sys.stdin.readline().split()) #호수 넓이 x,y
-hosu = [list(map(str, sys.stdin.readline()[:y])) for _ in range((x))] #2차원 리스트 형식으로 문자열 저장
+hosu = [list(input().strip()) for _ in range(x)] #2차원 리스트 형식으로 문자열 저장
 visit = [[0 for _ in range(y)] for _ in range(x)]
-next_day = hosu
-print(hosu)
-print(next_day)
 
+wc = [[False]*y for _ in range(x)]
+sc = [[False]*y for _ in range(x)]
+
+wq1, wq2 = deque(), deque()
+sq1, sq2 = deque(), deque()
 whereL = []
 
-
-def meet(): #길찾기 알고리즘.
-    queue = []
-    dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
-
-    queue.append(whereL[0])
-    visit[whereL[0][0]][whereL[0][1]] = 1
-
-    while queue:
-        x,y = queue.pop(0)
-        if x == whereL[1][0] and y == whereL[1][1]:
-            return True
-
+ex, ey, ans = 0,0,0
+dx, dy = (0,-1,0,1),(-1,0,1,0)
+def water():
+    while wq1:
+        x,y = wq1.popleft()
+        hosu[x][y] = '.'
         for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
-            if 0<= nx<x and 0<= ny < y:
-                if visit[nx][ny] == 0 and hosu[nx][ny] == '.':
-                    visit[nx][ny] = visit[x][y] + 1
-                    queue.append((nx,ny))
+            nx, ny = x+dx[i], y+dy[i]
+            if nx < 0 or nx >= x or ny <0 or ny >=y or wc[nx][ny]:
+                continue
+            if hosu[nx][ny] == '.':
+                wq1.append((nx,ny))
+            else:
+                wq2.append((nx,ny))
+            wc[nx][ny] = True
+
+def swan():
+    while sq1:
+        x,y = wq1.popleft()
+        if x == ex and y == ey:
+            return True
+        for i in range(4):
+            nx, ny = x+dx[i], y+dy[i]
+            if nx < 0 or nx >= x or ny <0 or ny >=y or wc[nx][ny]:
+                continue
+            if hosu[nx][ny] == '.':
+                sq1.append((nx,ny))
+            else:
+                sq2.append((nx,ny))
+            sc[nx][ny] = True
+    return False
+
+for i in range(x):
+    for j in range(y):
+        if hosu[i][j] == 'L':
+            if not sq1:
+                sq1.append((i,j))
+                sc[i][j] = True
+            else:
+                ex, ey = i,j
+            hosu[i][j] = '.'
+        if hosu[i][j] == '.':
+            wq1.append((i,j))
+            wc[i][j] = True
 
 
 def winter_hosu():
