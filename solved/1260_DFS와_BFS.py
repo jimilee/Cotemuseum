@@ -7,7 +7,7 @@ N, M, V = map(int, sys.stdin.readline().split()) #정점의 갯수 N, 간선 수
 graph = {}
 list = []
 for i in range(M):
-    node1, node2 = map(int,input().split())
+    node1, node2 = map(int, input().split())
     if i+1 not in graph.keys():
         graph[i+1] = []
     # 양방향 그래프 저장
