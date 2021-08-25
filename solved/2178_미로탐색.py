@@ -12,11 +12,9 @@ def bfs(maze, start_node):
     visit = {}
     queue = deque()
     queue.append(start_node)
-
     while queue:
         node = queue.popleft()
         if node not in visit.keys():
-
             for i in range(4):
                 nx, ny = node[0]+dx[i], node[1]+dy[i]
                 if nx < 0 or nx >= N or ny <0 or ny >= M:

@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("./input.txt", "r")
+sys.stdin = open("../input.txt", "r")
 
 def productMatrix(A, B):
     return [[sum((a*b) for a, b in zip(A_row, B_col))%1000 for B_col in zip(*B)] for A_row in A]
