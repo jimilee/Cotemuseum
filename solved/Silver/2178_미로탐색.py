@@ -1,7 +1,7 @@
 import sys
 from collections import deque
 
-sys.stdin = open("../input.txt", "r")
+sys.stdin = open("../../input.txt", "r")
 
 N, M = map(int, sys.stdin.readline().split()) #갯수 N, 간선 수 M
 dx, dy = (0,-1,0,1),(-1,0,1,0)

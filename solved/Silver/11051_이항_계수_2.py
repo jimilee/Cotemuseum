@@ -1,6 +1,6 @@
 import sys
 
-sys.stdin = open("../input.txt", "r")
+sys.stdin = open("../../input.txt", "r")
 
 N, K = map(int, sys.stdin.readline().split()) # N, K
 if N==K or K==0: print('1')

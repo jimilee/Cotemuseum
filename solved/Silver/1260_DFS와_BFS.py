@@ -1,6 +1,6 @@
 import sys
 from collections import deque
-sys.stdin = open("../input.txt", "r")
+sys.stdin = open("../../input.txt", "r")
 
 N, M, V = map(int, sys.stdin.readline().split()) #정점의 갯수 N, 간선 수 M, 탐색을 시작할 정점의 번호 V
 
