@@ -1,8 +1,7 @@
 import sys
 from collections import deque
 
-#시간초과
-sys.stdin = open("../../input.txt", "r")
+sys.stdin = open("./input.txt", "r")
 
 N, Q = map(int, sys.stdin.readline().split()) # N, Q
 
