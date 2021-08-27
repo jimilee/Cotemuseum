@@ -2,7 +2,7 @@ import sys
 
 #피사노 주기
 #1000000 (백만) 으로 나눈 나머지 피보나치 수열의 반복주기는 1500000 (150만)
-sys.stdin = open("../../input.txt", "r")
+sys.stdin = open("./input.txt", "r")
 
 N = int(sys.stdin.readline()) # N
 

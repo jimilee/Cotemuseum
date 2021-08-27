@@ -22,7 +22,6 @@ def bfs(maze, start_node):
                 if maze[nx][ny] == 1:
                     visit[node] = True
                     maze[nx][ny] = maze[node[0]][node[1]]+1
-
                     queue.append((nx,ny))
     return maze[N-1][M-1]
 

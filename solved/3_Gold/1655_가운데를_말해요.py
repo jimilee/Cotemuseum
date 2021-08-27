@@ -1,7 +1,7 @@
 import sys
 import heapq
 
-sys.stdin = open("../../input.txt", "r")
+sys.stdin = open("./input.txt", "r")
 
 x = int(sys.stdin.readline())#x
 
