@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("./input.txt", "r")
+sys.stdin = open("../../input.txt", "r")
 
 N, M = map(int, sys.stdin.readline().split())
 board = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
