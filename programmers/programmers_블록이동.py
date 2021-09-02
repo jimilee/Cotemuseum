@@ -2,7 +2,7 @@ import sys
 from collections import deque
 
 
-sys.stdin = open("./input.txt", "r")
+sys.stdin = open("../input.txt", "r")
 N = int(sys.stdin.readline())
 board = [list(map(int, sys.stdin.readline().split(','))) for _ in range(N)]
 dx, dy = (0,-1,0,1),(-1,0,1,0)
@@ -28,8 +28,8 @@ def moving_robot(board):
             statxy = state # x, y
             for i in range(4):
                 nx, ny = x+dx[i], y+dy[i]
-                if nx<0 or ny<0 or nx>=N or ny>=N or (nx==x2 and ny==y2) or board[nx][ny]==1: continue
-                if abs(nx - x) == statxy and {(x,y), (nx,ny)} not in visited: #방향이 로봇과 같은 방향으로 이동할때.
+                if nx<0 or ny<0 or nx>=N or ny>=N or (nx==x2 and ny==y2) or board[nx][ny]!=0 or {(x,y), (nx,ny)} in visited: continue
+                if abs(nx - x) == statxy: #방향이 로봇과 같은 방향으로 이동할때.
                     board[nx][ny] = board[x][y] - 1
                     print('push. xy/ 방향같게 이동.',nx,ny,x,y,statxy)
                     for _ in board:
@@ -63,8 +63,8 @@ def moving_robot(board):
             for i in range(4):
                 nx, ny = x2+dx[i], y2+dy[i]
                 print(nx, ny,statxy2, '보드 이동')
-                if nx<0 or ny<0 or nx>=N or ny>=N or (nx==x and ny==y) or board[nx][ny] == 1: continue
-                if abs(nx - x2) == statxy2 and {(x2,y2), (nx,ny)} not in visited: #로봇의 방향과 같은방향 이동
+                if nx<0 or ny<0 or nx>=N or ny>=N or (nx==x and ny==y) or board[nx][ny] !=0 or {(x2,y2), (nx,ny)} in visited: continue
+                if abs(nx - x2) == statxy2: #로봇의 방향과 같은방향 이동
                     board[nx][ny] = board[x2][y2] - 1
                     print('push. x2y2/ 같은방향 이동 ',nx,ny,x2,y2,statxy2)
                     for _ in board:
@@ -101,3 +101,5 @@ def solution(board):
     answer = moving_robot(board)
     print(answer)
     return answer
+
+solution(board)
