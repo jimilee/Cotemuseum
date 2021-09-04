@@ -44,7 +44,7 @@ def count_cluster():
             max_cluster = len(c)
     print(sum)
     print(max_cluster)
-
+##
 def check_board():
     melt_ice = deque()
     for i in range(NN):
