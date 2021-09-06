@@ -1,7 +1,7 @@
 import sys
 from collections import deque
 
-sys.stdin = open("./input.txt", "r")
+sys.stdin = open("../../input.txt", "r")
 
 N = int(sys.stdin.readline())
 NN = pow(N, 2)
