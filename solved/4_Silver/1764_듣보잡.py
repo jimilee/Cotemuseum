@@ -1,7 +1,7 @@
 import sys
 from collections import deque
 
-sys.stdin = open('./input.txt', 'r')
+sys.stdin = open('../../input.txt', 'r')
 N, M = map(int, sys.stdin.readline().split())
 non_listen = [sys.stdin.readline().split('\n')[0] for _ in range(N+M)]
 non_listen.sort()
