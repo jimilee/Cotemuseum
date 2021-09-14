@@ -2,7 +2,7 @@ import sys
 from collections import deque
 from itertools import combinations
 
-sys.stdin = open('./input.txt','r')
+sys.stdin = open('../../input.txt', 'r')
 
 N, K = map(int, sys.stdin.readline().split())
 
@@ -18,7 +18,7 @@ else: K -= 5
 #org = [set(sys.stdin.readline().rstrip()) for _ in range(N)]
 org = {ky: v for v, ky in enumerate(
     (set(map(chr, range(ord('a'), ord('z')+1))) - known))} #ord - 아스키코드
-
+print(org)
 cnt = 0
 know = []
 for _ in range(N):
@@ -30,6 +30,7 @@ for _ in range(N):
 power_by_2 = (2**i for i in range(21))
 for comb in combinations(power_by_2, K):
     test = sum(comb)
+    print(test)
     ct = 0
     for cb in know:
         if test & cb == cb:
