@@ -1,6 +1,6 @@
 import sys
 from collections import deque
-sys.stdin = open("./input.txt","r")
+sys.stdin = open("../../input.txt", "r")
 
 x, y = map(int, sys.stdin.readline().split()) #호수 넓이 x,y
 hosu = [list(input().strip()) for _ in range(x)] #2차원 리스트 형식으로 문자열 저장
