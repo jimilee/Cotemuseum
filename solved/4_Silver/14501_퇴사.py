@@ -1,7 +1,7 @@
 import sys
 
 #다이나믹 프로그래밍, # 브루투 포스
-sys.stdin = open('./input.txt','r')
+sys.stdin = open('../../input.txt', 'r')
 
 N = int(sys.stdin.readline())
 schedule = {}
