@@ -1,7 +1,7 @@
 import sys
 from itertools import permutations
 import operator
-sys.stdin = open('./input.txt', 'r')
+sys.stdin = open('../../input.txt', 'r')
 
 cal = {0:'+', 1:'-', 2:'*', 3:'/'}
 N = int(sys.stdin.readline())
