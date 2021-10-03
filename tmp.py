@@ -1,5 +1,5 @@
 from collections import deque
-
+# O(1) 로 minimum 구하기
 class minimum_Stack():
     def __init__(self):
         self.Stack = [] #파이썬은 리스트를 스택으로 사용
