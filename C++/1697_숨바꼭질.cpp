@@ -7,7 +7,7 @@
 using namespace std;
 int n, k;
 
-int solved_1697_¼û¹Ù²ÀÁú(int n, int k) {
+int move_n(int n, int k) {
 	queue<pair<int, int>> que;
 	bool visited[MAX] = {false};
 	que.push(make_pair(n, 0));
@@ -35,7 +35,7 @@ int solved_1697_¼û¹Ù²ÀÁú(int n, int k) {
 	}
 }
 
-int main() {
+int solved_1697() {
 
 	scanf("%d %d", &n, &k);
 
