@@ -2,7 +2,7 @@
 #include <stdio.h>
 using namespace std;
 
-int solved_1292_쉽게_푸는_문제() {
+int solved_1292() {
 	int a, b;
 	scanf("%d %d", &a, &b);
 

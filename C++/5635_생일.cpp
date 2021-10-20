@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-int solved_5635_»ıÀÏ() {
+int solved_5635() {
 	int n = 0;
 	string most_old = "";
 	int old_y = 9999, old_m = 99, old_d = 99;
