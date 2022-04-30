@@ -13,7 +13,9 @@ for i in range(N):
 dp.append(0)
 for i in range(N - 1, -1, -1):
     if schedule[i][0] + i > N: #시간이 초과일때
-        dp[i] = dp[i + 1]
+        dp[i] = dp[i + 1] # 이전꺼로 담기.
     else:
-        dp[i] = max(dp[i + 1], schedule[i][1] + dp[i + schedule[i][0]])
+        dp[i] = max(dp[i + 1], schedule[i][1] + dp[i + schedule[i][0]]) # 이득보는 거로 담기.
+    print(schedule)
+    print(dp)
 print(dp[0])
