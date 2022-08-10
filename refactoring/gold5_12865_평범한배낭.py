@@ -9,19 +9,21 @@ print(inputs)
 
 max_val = 0
 in_bag = [[0 for _ in range(K+1)] for _ in range(N+1)]
-for i in range(N):
+for i in range(N): # 물품
     weight = int(inputs[i][0])
     value = int(inputs[i][1])
-    for j in range(1, K+1):
+    for j in range(1, K+1): # 준서가 버틸 수 있는 무게 j >> 단계적으로 늘리면서 담아봄
         if weight > j:
             in_bag[i+1][j] = in_bag[i][j]
         else:
             in_bag[i+1][j] = max(value + in_bag[i][j-weight], in_bag[i][j])
 
 print(in_bag[N][K])
-# print(in_bag)
 
 
+'''
+previous
+'''
 # import sys
 # sys.stdin = open("/home/jml/_workspace/BaekJoon/input.txt", "r")
 # inputs = []
@@ -44,4 +46,4 @@ print(in_bag[N][K])
 #         else:
 #             in_bag[i][j] = max(value + in_bag[i-1][j-weight], in_bag[i-1][j])
 #
-# print(in_bag)
+# print(in_bag[N][K])
