@@ -1,3 +1,4 @@
+# gold 2
 import sys
 import heapq
 sys.stdin = open("/home/jml/_workspace/BaekJoon/input.txt", "r")

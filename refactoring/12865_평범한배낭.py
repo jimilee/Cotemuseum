@@ -1,3 +1,4 @@
+#gold5
 import sys
 
 sys.stdin = open("/home/jml/_workspace/BaekJoon/input.txt", "r")
